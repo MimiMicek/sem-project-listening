@@ -12,16 +12,19 @@ if(isset($_POST['timestamp']))
     //echo $dateTime;
 }
 
+$pageName = $_POST['pageName'] ?? '';
+
 try {
     global $dateTime;
-    //Saving the timestamp
-    $stmt = $db->prepare( 'INSERT INTO overview VALUES(null,:dateTime)' );
+     //Saving the timestamp
+    $stmt = $db->prepare( 'INSERT INTO timestamps VALUES(null,:dateTime,:pageName)' );
     $stmt->bindValue(':dateTime', $dateTime );
+    $stmt->bindValue(':pageName', $pageName );
     $stmt->execute();
 
     //Using rowcount() when INSERTing, UPDATEing or DELETEing
     if( $stmt->rowCount() == 0 ){
-        echo 'Sorry, the account was not saved!';
+        echo 'Sorry, the timestamp was not saved!';
         exit;
     }
 
@@ -29,7 +32,7 @@ try {
     echo $ex;
 }
 
-header("refresh:0;url=../questions.php");
+header("refresh:0;url=../listening.php");
 sendResponse(1, __LINE__, "Saved!");
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

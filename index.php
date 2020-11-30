@@ -10,12 +10,13 @@ ini_set('display_errors', 0);
         <div class="align-self-center" style="margin: auto">
             <h3>Overview</h3>
                 <ul style="list-style-type:circle;">
-                    <li>Main task - Listening</li>
-                    <li>Second task - Essay</li>
-                    <li>Third task</li>
-                    <li>Fourth task</li>
+                    <li>Task 1: Listening</li>
+                    <li>Task 2: Attention</li>
+                    <li>Task 3: Memory</li>
+                    <li>Task 4: Writing an Essay & Maze</li>
                 </ul>
-            <form action="apis/api-save-timestamp.php" method="post">
+            <form action="apis/save-timestamp-overview.php" method="post">
+                <input name="pageName" style="display: none" value="overviewPage">
                 <button id="btnTimestamp" name="timestamp" class="btn-info click">Start</button>
             </form>
             You have
@@ -27,10 +28,10 @@ ini_set('display_errors', 0);
     </body>
 </html>
 <script>
-    var seconds=5;
+    var seconds=30;
     var timer;
     function myFunction() {
-        if(seconds < 60) { //I want it to say 1:00, not 60
+        if(seconds < 30) { //I want it to say 1:00, not 60
             document.getElementById("timer").innerHTML = seconds;
         }
         if (seconds > 0 ) { // so it doesn't go to -1
@@ -38,7 +39,7 @@ ini_set('display_errors', 0);
         } else {
             clearInterval(timer);
             document.getElementById('btnTimestamp').click();
-        <?php /*header("refresh:60;url=sem-project/write-essay.php");*/?>
+        <?php /*header("refresh:60;url=sem-project/write-essay-solve-maze.php");*/?>
         }
     }
     window.onload = function() {

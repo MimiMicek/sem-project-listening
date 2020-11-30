@@ -9,11 +9,5 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <meta name="theme-color" content="#563d7c">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <style>
-        p {
-            text-align: left;
-            font-size: 60px;
-            margin-top: 0px;
-        }
-    </style>
+
 </head>
