@@ -9,14 +9,20 @@ ini_set('display_errors', 0);
     <body class="container">
         <div class="align-self-center" style="margin: auto">
         <div class="container-description">
-            <h3 class="container-title">Tasks Overview</h3>
-                <ul style="list-style-type:circle;">
-                    <li>Task 1: Listening</li>
-                    <li>Task 2: Attention</li>
-                    <li>Task 3: Memory</li>
-                    <li>Task 4: Writing an Essay & Maze</li>
-                </ul>
-        </div>
+            <h3 class="container-title">WELCOME!</h3>
+            <p class="body-font">During the next 10 minutes, you will be presented with a series of tasks to solve. Here is a short overview of the tasks.</p>
+            
+            <div class="tasks-container"></div>
+                <h5><span class="task-number">Task 1</span>: Listening</h5>
+                <p class="task-desc">where you will have to listen to a short audio given to you.</p>
+
+                <h5><span class="task-number">Task 2</span>: Sustained Attention</h5>
+                <p class="task-desc">where you will have to press the spacebar when certain stimuli get shown on the screen.</p>
+
+                <h5><span class="task-number">Task 3</span>: Essay & Maze</h5>
+                <p class="task-desc">where you will have to write a short essay and solve a maze.</p>
+            </div>
+            </div>
             <form action="apis/save-timestamp-overview.php" method="post">
                 <input name="pageName" style="display: none" value="overviewPage">
                 <!-- <button id="btnTimestamp" name="timestamp" class="btn-info click">Start</button> -->

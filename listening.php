@@ -9,12 +9,11 @@ require_once 'header.php';
     <div>
         <h2 class="container-title">Listening Task</h2>
         <p class="body-font">Please listen carefully to the sound recording.</p>
+        <p class="body-font"></p>
     </div>
-        
-       
 
     <audio id="audio">
-        <source src="listening.mp3" type="audio/mp3" onended="showNextBtn()">
+        <source src="ai.mp3" type="audio/mp3" onended="showNextBtn()">
     </audio>        
     
     <button style="display: none" onload="setTimeout(myFunction, 95000)"></button>
@@ -40,20 +39,113 @@ require_once 'header.php';
         </div> 
 
 
-        <!-- Trigger/Open The Modal -->
-        <!-- <button id="myBtn">Open Modal</button> -->
+            <!-- Trigger/Open The Modal -->
+            <!-- <button id="myBtn">Open Modal</button> -->
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
+            <!-- The Modal -->
+            <div id="myModal1" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span>To close this AD, click the X on the right.</span>
+                <span class="close">&times;</span>
+                <div class="ad-container">
+                    <img src='imgs/bank-ads.jpeg' />
+                </div>
+            </div>
+
         </div>
 
+        </div> 
+
+        <div id="myModal2" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span>To close this AD, click the X on the right.</span>
+                <span class="close">&times;</span>
+                <div class="ad-container">
+                    <img src='imgs/bike.jpg' />
+                </div>
+            </div>
         </div>
 
+        <div id="myModal3" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span>To close this AD, click the X on the right.</span>
+                <span class="close">&times;</span>
+                <div class="ad-container">
+                    <img src='imgs/remedii.jpg' />
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal4" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span>To close this AD, click the X on the right.</span>
+                <span class="close">&times;</span>
+                <div class="ad-container">
+                    <img src='imgs/vegan.jpg' />
+                </div>
+            </div>
+        </div>
+
+
+        <div id="myModal5" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span>To close this AD, click the X on the right.</span>
+                <span class="close">&times;</span>
+                <div class="ad-container">
+                    <img src='imgs/movie.jpg' />
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="myModal6" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span>To close this AD, click the X on the right.</span>
+                <span class="close">&times;</span>
+                <div class="ad-container">
+                    <img src='imgs/mouthwash.jpg' />
+                </div>
+            </div>
+        </div>
+
+
+        <div id="myModal7" class="modal">
+            <div class="modal-content">
+                <span>To close this AD, click the X on the right.</span>
+                <span class="close">&times;</span>
+                <div class="ad-container">
+                    <img src='imgs/stop.jpg' />
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal8" class="modal">
+            <div class="modal-content">
+                <span>To close this AD, click the X on the right.</span>
+                <span class="close">&times;</span>
+                <div class="ad-container">
+                    <img src='imgs/greencoffee.jpg' />
+                </div>
+            </div>
+        </div>
+
+
+        <div id="myModal9" class="modal">
+            <div class="modal-content">
+                <span>To close this AD, click the X on the right.</span>
+                <span class="close">&times;</span>
+                <div class="ad-container">
+                    <p>Hold on, a little more left of the audio.</p>
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -65,8 +157,76 @@ require_once 'header.php';
             audio.play();
             audioPlaying = true;
             document.querySelector(".buffering").style.visibility = 'visible';
-            setTimeout(showAlertModal, 3000); 
-            setTimeout(showAlert, 5000);       
+
+            // 2sec
+            setTimeout(function(){
+                showAlertModal('myModal1', 1);
+            }, 2000);
+
+            // 3sec
+            setTimeout(function(){
+                showAlertModal('myModal2', 2);
+            }, 3000);
+
+
+
+            // 22sec
+            setTimeout(showAlert, 22000);     
+
+            // 23sec
+            setTimeout(function(){
+                showAlertModal('myModal3', 3);
+            }, 23000);
+
+
+
+            // 42sec
+            setTimeout(function(){
+                showAlertModal('myModal4', 4);
+            }, 42000);
+
+            // 43sec
+            setTimeout(function(){
+                showAlertModal('myModal5', 5);
+            }, 43000);
+
+
+
+            // 62sec
+            setTimeout(function(){
+                showAlert2();
+            }, 62000);
+
+            // 63sec
+            setTimeout(function(){
+                showAlertModal('myModal6', 6);
+            }, 63000);
+
+
+
+            // 82sec
+            setTimeout(function(){
+                showAlertModal('myModal7', 7);
+            }, 82000);
+
+
+            // 85sec
+            setTimeout(function(){
+                showAlertModal('myModal8', 8);
+            }, 85000);
+
+
+
+
+            // 102
+            setTimeout(function(){
+                showAlertModal('myModal9', 9);
+            }, 102000);
+
+            // 105
+            setTimeout(showAlert3, 105000);    
+
+
         });
 
         audio.addEventListener("ended", function() {
@@ -75,27 +235,20 @@ require_once 'header.php';
             document.querySelector(".btn-next-listening").style.backgroundColor = '#259B24';
         });
 
-        function showAlertModal() {
+        function showAlertModal(modalId, modalNumber) {
              // Get the modal
-             var modal = document.getElementById("myModal");
+            var modal = document.getElementById(modalId);
+            console.log(modal)
+            // var span = document.querySelector(`#${modalId} .close`);
+            var span = document.getElementsByClassName("close")[modalNumber - 1];
+            console.log(span)
 
-            // Get the button that opens the modal
-            // var btn = document.getElementById("myBtn");
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks the button, open the modal 
-            // btn.onclick = function() {
             modal.style.display = "block";
-            // }
 
-            // When the user clicks on <span> (x), close the modal
             span.onclick = function() {
                 modal.style.display = "none";
             }
 
-            // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -105,6 +258,16 @@ require_once 'header.php';
 
         function showAlert() {
             alert('Keep an eye on the time.');
+        }
+
+        function showAlert2() {
+            let today = new Date();
+            let time = today.getHours() + ":" + today.getMinutes();
+            alert(`It is ${time} o'clock.`);
+        }
+
+        function showAlert3() {
+            alert('Audio is almost over.');
         }
     
     </script>

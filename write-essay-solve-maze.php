@@ -45,7 +45,7 @@ require_once 'header.php';
     </body>
 
     <script>
-        let intervalID = window.setInterval(toggleEvery30s, 3000);
+        let intervalID = window.setInterval(toggleEvery30s, 30000);
 
         function toggleEvery30s () {
             let x = document.querySelector("#maze-container");

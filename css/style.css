@@ -41,6 +41,19 @@ body {
     margin: 0 auto;
 }
 
+.task-number {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tasks-container {
+    margin-top: 50px;
+}
+
+.task-desc {
+    margin-bottom: 30px;
+}
+
 .rad-button {
     white-space: nowrap;
     top: 0px;
@@ -372,6 +385,11 @@ select:focus {
 
   .btn-next-listening {
       background-color: rgba(0,0,0,0.1);
+      border-bottom: 0px;
+  }
+
+  .ad-container img {
+      width: 100%;
   }
 
   /* The Modal (background) */
@@ -379,7 +397,7 @@ select:focus {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 40px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -395,15 +413,39 @@ select:focus {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 60%;
+    margin-top: 90px;
+    display: block;
+  }
+
+  #myModal2 .modal-content {
+    margin-left: 30vw;
+    width: 40%;
+    margin-top: 0px;
+    display: block;
+  }
+
+  #myModal4 .modal-content {
+    margin-top: 20px;
+    margin-left: 170px;
   }
   
+  #myModal5 .modal-content {
+      width: 40%;
+      margin-top: 0px;
+  }
+
+  #myModal6 .modal-content {
+    width: 40%;
+}
+
   /* The Close Button */
   .close {
-    color: #aaaaaa;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    opacity: 1;
   }
   
   .close:hover,
