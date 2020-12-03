@@ -22,6 +22,9 @@ $answer5 = $_POST['answer5'] ?? '';
 $answer6 = $_POST['answer6'] ?? '';
 $answer7 = $_POST['answer7'] ?? '';
 $answer8 = $_POST['answer8'] ?? '';
+$answer9 = $_POST['answer9'] ?? '';
+$answer10 = $_POST['answer10'] ?? '';
+$answer11 = $_POST['answer11'] ?? '';
 
 try {
     global $dateTime;
@@ -31,7 +34,7 @@ try {
     $stmt->bindValue(':pageName', $pageName );
     $stmt->execute();
 
-    $stmt = $db->prepare( 'INSERT INTO answers VALUES(null,:answer1,:answer2,:answer3,:answer4,:answer5,:answer6,:answer7,:answer8)' );
+    $stmt = $db->prepare( 'INSERT INTO answers VALUES(null,:answer1,:answer2,:answer3,:answer4,:answer5,:answer6,:answer7,:answer8,:answer9,:answer10,:answer11)' );
     $stmt->bindValue(':answer1', $answer1 );
     $stmt->bindValue(':answer2', $answer2 );
     $stmt->bindValue(':answer3', $answer3 );
@@ -40,6 +43,9 @@ try {
     $stmt->bindValue(':answer6', $answer6 );
     $stmt->bindValue(':answer7', $answer7 );
     $stmt->bindValue(':answer8', $answer8 );
+    $stmt->bindValue(':answer9', $answer9 );
+    $stmt->bindValue(':answer10', $answer10 );
+    $stmt->bindValue(':answer11', $answer11 );
     $stmt->execute();
 
     //Using rowcount() when INSERTing, UPDATEing or DELETEing
